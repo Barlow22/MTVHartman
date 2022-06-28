@@ -55,7 +55,7 @@ ROOT_URLCONF = 'MVTHartman.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/bk/Desktop/Django/MVTHartman/MVTHartman/plantillas/'],
+        'DIRS': ['C:/Users/bk/Desktop/Django/MVTHartman/AppMTV/templates/AppMTV'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

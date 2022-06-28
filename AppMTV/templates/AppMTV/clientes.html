@@ -1,0 +1,57 @@
+{% extends "AppMTV/padre.html" %}
+
+{% load static %}
+
+{% block herencia %}
+
+<div>
+
+    <h3>Agrega tu cliente</h3>
+
+</div>
+
+{% if mi_formulario.errors %}
+
+<p style="color: red;">Algunos de los datos ingresados es incorrecto.</p>
+
+{% endif %}
+
+<form action="" method="POST"> {% csrf_token %}
+
+    <table>
+
+        {{ mi_formulario.as_table }}
+
+    </table>
+
+    <input type="submit", value="Guardar">
+
+</form>
+
+<h3>O podes buscar un cliente</h3>
+
+<form action="/AppMTV/buscar/" method="GET">
+
+    <input type="text" name="nombre_fantasia" id="nombre_fantasia">
+    
+    <input type="submit" value="Buscar">
+
+</form>
+
+
+{% if clientes %}
+<ul>
+{% for cliente in clientes %}
+
+    <li>{{ cliente.nombre_fantasia }}</li>
+    <li>{{ cliente.razon_social }}</li>
+    <li>{{ cliente.cuit }}</li>
+    <li>{{ cliente.calle }}</li>
+    <li>{{ cliente.altura }}</li>
+
+{% endfor %}
+</ul>
+{% endif %}
+
+
+{% endblock %}

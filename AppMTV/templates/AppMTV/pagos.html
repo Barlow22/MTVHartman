@@ -1,0 +1,32 @@
+{% extends "AppMTV/padre.html" %}
+
+{% load static %}
+
+{% block herencia %}
+
+<div>
+
+    <h3>Agrega tu pago</h3>
+
+</div>
+
+{% if mi_formulario.errors %}
+
+<p style="color: red;">Algunos de los datos ingresados es incorrecto.</p>
+
+{% endif %}
+
+<form action="" method="POST"> {% csrf_token %}
+
+    <table>
+
+        {{ mi_formulario.as_table }}
+
+    </table>
+
+    <input type="submit", value="Guardar">
+
+</form>
+
+
+{% endblock %}

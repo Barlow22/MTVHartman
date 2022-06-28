@@ -1,0 +1,23 @@
+{% extends "AppMTV/padre.html" %}
+
+{% load static %}
+
+{% block herencia %}
+
+<p>Busqueda de clientes</p>
+
+{% if clientes %}
+<ul>
+{% for cliente in clientes %}
+
+    <li>{{ cliente.nombre_fantasia }}</li>
+    <li>{{ cliente.razon_social }}</li>
+    <li>{{ cliente.cuit }}</li>
+    <li>{{ cliente.calle }}</li>
+    <li>{{ cliente.altura }}</li>
+
+{% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}
